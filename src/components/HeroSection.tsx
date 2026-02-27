@@ -7,9 +7,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
+
       {/* Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
@@ -40,18 +40,13 @@ const HeroSection = () => {
 
         {/* Sub-headline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Especialista em orquestração de pipelines de IA e desenvolvimento fullstack orientado a eventos. 
-          Projeto principal deployado em arquitetura multi-cloud e VPS self-hosted com CI/CD automático, processamento multimodal 
+          Especialista em orquestração de pipelines de IA e desenvolvimento fullstack orientado a eventos.
+          Projeto principal deployado em arquitetura multi-cloud e VPS self-hosted com CI/CD automático, processamento multimodal
           em tempo real e integração de múltiplos agentes de IA.
         </p>
 
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">
-            <ChevronDown className="w-8 h-8" />
-          </a>
-        </div>
+
       </div>
     </section>
   );
