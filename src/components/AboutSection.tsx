@@ -63,13 +63,13 @@ const AboutSection = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 Com experiência real desenvolvendo plataformas de automação empresarial integradas com IA, coloquei em produção
                 um sistema completo com processamento multimodal, orquestração de workflows e integração com múltiplas APIs
-                externas — tudo em uma arquitetura full stack moderna com deploy multi-cloud.
+                externas — tudo em uma arquitetura full stack moderna com deploy multi-cloud e VPS self-hosted.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 Esse background me permite não apenas programar, mas{" "}
                 <span className="text-gradient font-semibold">orquestrar sistemas inteligentes complexos</span>.
                 Seja criando AI Agents com memória de contexto, desenvolvendo workflows com bifurcação condicional,
-                ou containerizando aplicações para produção com Docker — meu foco está em transformar{" "}
+                containerizando aplicações para produção com Docker, ou administrando servidores Linux com Traefik e SSL automático — meu foco está em transformar{" "}
                 <span className="text-gradient font-semibold">requisitos técnicos em soluções escaláveis e inteligentes</span>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">

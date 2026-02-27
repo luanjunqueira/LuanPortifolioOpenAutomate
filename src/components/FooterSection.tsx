@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+
 import { Mail, Copy, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
@@ -33,16 +33,15 @@ const FooterSection = () => {
         {/* Contact Section */}
         <div className="flex flex-col items-center gap-6 mb-16">
           {/* WhatsApp Button */}
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl glow-effect hover:opacity-90 transition-all duration-300 hover:scale-105"
+          <a
+            href="https://wa.me/5512982055846"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg transition-all duration-300 hover:scale-105"
           >
-            <a href="https://wa.me/5512982055846?text=Ola%20Luan" target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp
-            </a>
-          </Button>
+            <MessageCircle className="w-5 h-5" />
+            WhatsApp
+          </a>
 
           {/* Email Display */}
           <div className="flex items-center gap-3 bg-card/50 border border-border rounded-xl px-6 py-4">

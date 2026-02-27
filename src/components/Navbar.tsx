@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+
 import { Menu, X, MessageCircle } from "lucide-react";
 
 const navLinks = [
@@ -50,12 +50,15 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button asChild size="sm" className="bg-gradient-primary text-primary-foreground font-semibold">
-              <a href="https://wa.me/5512982055846?text=Ola%20Luan" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4 mr-1" />
-                WhatsApp
-              </a>
-            </Button>
+            <a
+              href="https://wa.me/5512982055846"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white font-semibold transition-colors text-sm"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,12 +84,15 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button asChild className="w-full bg-gradient-primary text-primary-foreground font-semibold">
-                <a href="https://wa.me/5512982055846?text=Ola%20Luan" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4 mr-1" />
-                  Fale Comigo
-                </a>
-              </Button>
+              <a
+                href="https://wa.me/5512982055846"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white font-semibold transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Fale Comigo
+              </a>
             </div>
           </div>
         )}

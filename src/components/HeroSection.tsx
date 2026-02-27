@@ -41,7 +41,7 @@ const HeroSection = () => {
         {/* Sub-headline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           Especialista em orquestração de pipelines de IA e desenvolvimento fullstack orientado a eventos. 
-          Projeto principal deployado em arquitetura multi-cloud com CI/CD automático, processamento multimodal 
+          Projeto principal deployado em arquitetura multi-cloud e VPS self-hosted com CI/CD automático, processamento multimodal 
           em tempo real e integração de múltiplos agentes de IA.
         </p>
 
