@@ -1,4 +1,4 @@
-import { Brain, Code, Database, Plug } from "lucide-react";
+import { Brain, Code, Database, Plug, Server } from "lucide-react";
 
 const skillPillars = [
   {
@@ -37,6 +37,15 @@ const skillPillars = [
     iconBg: "bg-amber-500/20",
     iconColor: "text-amber-400",
   },
+  {
+    title: "Infra & DevOps",
+    icon: Server,
+    skills: ["Traefik", "Let's Encrypt", "VPS Linux", "Docker Swarm", "Portainer", "SSH/SFTP", "Administração de Servidor"],
+    color: "from-rose-500/20 to-pink-500/20",
+    borderColor: "border-rose-500/30",
+    iconBg: "bg-rose-500/20",
+    iconColor: "text-rose-400",
+  },
 ];
 
 const SkillsSection = () => {
@@ -60,7 +69,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillPillars.map((pillar, index) => (
             <div
               key={index}

@@ -1,4 +1,4 @@
-import { Cloud, Database, Globe, AlertTriangle } from "lucide-react";
+import { Cloud, Database, Globe, AlertTriangle, Server } from "lucide-react";
 
 const deployTargets = [
   {
@@ -42,6 +42,23 @@ const deployTargets = [
       "Rollback manual disponível via dashboard",
     ],
   },
+  {
+    icon: Server,
+    title: "VPS Self-Hosted (Ubuntu Linux)",
+    color: "text-amber-400",
+    bgColor: "bg-amber-500/20",
+    borderColor: "border-amber-500/30",
+    details: [
+      "Deploy completo do sistema em VPS própria (Ubuntu) via scripts Node.js automatizados com ssh2 e ssh2-sftp-client",
+      "Traefik v2.11 como reverse proxy inteligente com roteamento automático por subdomínio (Host-based routing)",
+      "SSL/TLS automático via Let's Encrypt (ACME TLS Challenge) — certificados gerados e renovados automaticamente",
+      "Docker Compose em produção orquestrando 6 containers: Backend, Frontend, PostgreSQL, N8N, Nginx, WAHA",
+      "Múltiplos subdomínios na mesma VPS: open.verdant.com.br (Dashboard), wpp.verdant.com.br (WhatsApp API)",
+      "WAHA (WhatsApp HTTP API) self-hosted com volumes persistentes para sessões e mídia",
+      "Portainer CE para gerenciamento visual de containers em produção",
+      "Administração Linux: gerenciamento de portas, processos, firewall e permissões via SSH",
+    ],
+  },
 ];
 
 const problemsResolved = [
@@ -65,6 +82,16 @@ const problemsResolved = [
     situation: "Build do Vite não injetando variáveis corretamente (VITE_API_URL estava undefined)",
     solution: "Correção do prefixo VITE_ para variáveis públicas e configuração adequada do processo de build no Vercel",
   },
+  {
+    title: "Conflito de portas na VPS",
+    situation: "Portas 80, 5173 e 5432 já ocupadas por outros serviços (Traefik, PostgreSQL global) na VPS compartilhada",
+    solution: "Remapeamento dinâmico de portas via sed no docker-compose.yml em tempo de deploy (80→8080, 5173→5175, 5433→5434), com Traefik roteando o tráfego externo transparentemente",
+  },
+  {
+    title: "Traefik dynamic.yml corrompido",
+    situation: "Arquivo de configuração dinâmica do Traefik com blocos YAML posicionados incorretamente após atualização automatizada, causando falha de roteamento em todos os domínios",
+    solution: "Diagnóstico remoto via SSH, identificação de service block sob routers ao invés de services, reconstrução manual do YAML com estrutura correta",
+  },
 ];
 
 const DeploySection = () => {
@@ -77,14 +104,14 @@ const DeploySection = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Deploy: Do Local para{" "}
-            <span className="text-gradient">Multi-Cloud</span>
+            <span className="text-gradient">Multi-Cloud & VPS Self-Hosted</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Estratégia de deploy distribuído em múltiplos provedores cloud, cada um otimizado para sua função específica. Transição de ambiente dockerizado local para infraestrutura gerenciada.
+            Estratégia de deploy híbrida combinando provedores cloud gerenciados com VPS própria. Cada serviço rodando no provedor otimizado para sua função, com deploy automatizado via scripts SSH/SFTP.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           {deployTargets.map((target, i) => (
             <div
               key={i}
